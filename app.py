@@ -12,13 +12,13 @@ app = Flask(__name__, template_folder=".")
 
 scaler = pickle.load(
     open(
-        r"C:\Users\Zeetracker\Desktop\BBIT 4.2\Systems Project Implementation HBT 2403\Education-Recommendation-System-Student-Subject-and-Studies-Recommendation-system-machine-learning\Models\scaler.pkl",
+        r"C:\Users\Zeetracker\Desktop\BBIT 4.2\Systems Project Implementation HBT 2403\course-recommender\Models\scaler.pkl",
         "rb",
     )
 )
 model = pickle.load(
     open(
-        r"C:\Users\Zeetracker\Desktop\BBIT 4.2\Systems Project Implementation HBT 2403\Education-Recommendation-System-Student-Subject-and-Studies-Recommendation-system-machine-learning\Models\scaler.pkl",
+        r"C:\Users\Zeetracker\Desktop\BBIT 4.2\Systems Project Implementation HBT 2403\course-recommender\Models\model.pkl",
         "rb",
     )
 )
