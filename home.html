@@ -44,22 +44,25 @@
         </div>
 
         <div class="container mt-5">
-            <h1>Welcome to JKUAT COHRED Courses Recommendation System</h1>
-            <p>This recommendation system aims to assist potential JKUAT COHRED students in selecting the most suitable
-                courses based on their academic performance, and RIASEC profiles.</p>
-            <p>Click the button below to get recommendations:</p>
+            <h1>Welcome to the Course Recommendation System</h1>
+            <p>This system is a test project designed to explore the potential of recommending university courses
+                based on student profiles. The dataset used was sourced from Kaggle and tailored to fit the objectives
+                of this proof of concept.</p>
+            <p>Currently, we have focused on 14 courses offered by JKUAT COHRED, aiming to demonstrate how academic
+                performance and RIASEC profiles can be used to suggest the most suitable courses for students.</p>
+            <p>Click the button below to get your course recommendations:</p>
             <a href="/recommend" class="btn btn-primary">Get Recommendations</a>
         </div>
     </div>
 
     <script>
-        const images = ["static/img.png", "static/img_1.png", "static/img_2.png"]; // Update image paths
+        const images = ["/img1.jpg", "/img2.jpg", "/img_2.png"]; // Update image paths
         let currentIndex = 0;
 
         function changeBackground() {
             document.getElementById('bgImage').style.backgroundImage = `url('${images[currentIndex]}')`;
             currentIndex = (currentIndex + 1) % images.length;
-            setTimeout(changeBackground, 4000); // Change every 2 seconds
+            setTimeout(changeBackground, 4000); // Change every 4 seconds
         }
 
         changeBackground();

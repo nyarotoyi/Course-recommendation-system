@@ -22,8 +22,45 @@
         .form-group label {
             font-weight: bold;
         }
+
+        .warning {
+            color: red;
+            font-weight: bold;
+            display: none;
+            margin-bottom: 10px;
+        }
     </style>
     <script>
+        function validateForm(event) {
+            let isValid = true;
+            const warning = document.getElementById("warning");
+            warning.style.display = "none";
+
+            const fields = [
+                document.getElementById("gender").value,
+                document.getElementById("extracurricular_activities").value,
+                document.getElementById("riasec").value,
+                document.getElementById("math_score").value,
+                document.getElementById("history_score").value,
+                document.getElementById("physics_score").value,
+                document.getElementById("chemistry_score").value,
+                document.getElementById("biology_score").value,
+                document.getElementById("english_score").value,
+                document.getElementById("geography_score").value,
+            ];
+
+            fields.forEach(function (field) {
+                if (field === "") {
+                    isValid = false;
+                }
+            });
+
+            if (!isValid) {
+                event.preventDefault(); // Prevent form submission
+                warning.style.display = "block";
+            }
+        }
+
         function calculateScores() {
             var mathScore = parseFloat(document.getElementById("math_score").value);
             var historyScore = parseFloat(document.getElementById("history_score").value);
@@ -48,12 +85,14 @@
     </div>
     <div class="container">
         <h2 class="text-center">Fill in the details to get recommendations</h2>
-        <form method="post" action="/pred">
+        <p id="warning" class="warning">Please fill in all the required fields before submitting the form.</p>
+        <form method="post" action="/pred" onsubmit="validateForm(event)">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="gender">Gender:</label>
                         <select class="form-control" id="gender" name="gender">
+                            <option value="">Select Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
@@ -63,6 +102,7 @@
                     <div class="form-group">
                         <label for="extracurricular_activities">Extracurricular Activities:</label>
                         <select class="form-control" id="extracurricular_activities" name="extracurricular_activities">
+                            <option value="">Select Option</option>
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                         </select>
@@ -74,14 +114,15 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="riasec">RIASEC Scores:</label>
-                        <input type="number" class="form-control" id="riasec" name="riasec">
+                        <input type="number" class="form-control" id="riasec" name="riasec"
+                            placeholder="Enter RIASEC Score">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="math_score">Math Score:</label>
                         <input type="number" class="form-control" id="math_score" name="math_score"
-                            onchange="calculateScores()">
+                            onchange="calculateScores()" placeholder="Enter Math Score">
                     </div>
                 </div>
             </div>
@@ -90,14 +131,14 @@
                     <div class="form-group">
                         <label for="history_score">History Score:</label>
                         <input type="number" class="form-control" id="history_score" name="history_score"
-                            onchange="calculateScores()">
+                            onchange="calculateScores()" placeholder="Enter History Score">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="physics_score">Physics Score:</label>
                         <input type="number" class="form-control" id="physics_score" name="physics_score"
-                            onchange="calculateScores()">
+                            onchange="calculateScores()" placeholder="Enter Physics Score">
                     </div>
                 </div>
             </div>
@@ -106,14 +147,14 @@
                     <div class="form-group">
                         <label for="chemistry_score">Chemistry Score:</label>
                         <input type="number" class="form-control" id="chemistry_score" name="chemistry_score"
-                            onchange="calculateScores()">
+                            onchange="calculateScores()" placeholder="Enter Chemistry Score">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="biology_score">Biology Score:</label>
                         <input type="number" class="form-control" id="biology_score" name="biology_score"
-                            onchange="calculateScores()">
+                            onchange="calculateScores()" placeholder="Enter Biology Score">
                     </div>
                 </div>
             </div>
@@ -122,14 +163,14 @@
                     <div class="form-group">
                         <label for="english_score">English Score:</label>
                         <input type="number" class="form-control" id="english_score" name="english_score"
-                            onchange="calculateScores()">
+                            onchange="calculateScores()" placeholder="Enter English Score">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="geography_score">Geography Score:</label>
                         <input type="number" class="form-control" id="geography_score" name="geography_score"
-                            onchange="calculateScores()">
+                            onchange="calculateScores()" placeholder="Enter Geography Score">
                     </div>
                 </div>
             </div>
