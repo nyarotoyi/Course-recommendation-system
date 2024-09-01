@@ -10,15 +10,16 @@ import numpy as np
 
 app = Flask(__name__, template_folder=".")
 
+
 scaler = pickle.load(
     open(
-        r"\Models\scaler.pkl",
+        "Models/scaler.pkl",
         "rb",
     )
 )
 model = pickle.load(
     open(
-        r"\Models\model.pkl",
+        "Model/model.pkl",
         "rb",
     )
 )
