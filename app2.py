@@ -112,6 +112,6 @@ if st.button("Get Course Recommendation"):
         (class_names[idx], f"Probability: {float(probabilities[0][idx]):.2f}") for idx in top_classes_idx
     ]
 
-        st.write("### Recommended Courses and Probabilities")
-        for idx, (course, probability) in enumerate(recommendations, 1):
-            st.write(f"{idx}. **{course}**: {probability}")
+    st.write("### Recommended Courses and Probabilities")
+    for idx, (course, probability) in enumerate(recommendations, 1):
+        st.write(f"{idx}. **{course}**: {probability}")
