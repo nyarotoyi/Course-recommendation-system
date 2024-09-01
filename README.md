@@ -18,7 +18,7 @@ Building a robust and accurate system will require additional data and testing. 
 
 ### Streamlit Cloud
 
-Click the button below to access the Course Recommendation System on Streamlit Cloud:
+Click the button below to access the Course Recommendation System on Streamlit Cloud
 
 <a href="https://courserecommendationsytem.streamlit.app/" target="_blank">
   <img src="https://img.shields.io/badge/Try%20the%20App%20on%20Streamlit%20Cloud-blue?style=for-the-badge&logo=streamlit" alt="Try the App on Streamlit Cloud" />
@@ -26,40 +26,40 @@ Click the button below to access the Course Recommendation System on Streamlit C
 
 ### Deploy Locally
 
-You can also deploy the app locally. Choose between the Streamlit app or the Flask app:
+You can also deploy the app locally. Choose between the Streamlit app or the Flask app
 
 #### Streamlit App
 
-1. **Clone the repository**:
+1. **Clone the repository**
     ```bash
     git clone https://github.com/nyarotoyi/Course-recommendation-system.git
     cd Course-recommendation-system
     ```
 
-2. **Install dependencies**:
+2. **Install dependencies**
     ```bash
     pip install streamlit scikit-learn numpy
     ```
 
-3. **Run the Streamlit app**:
+3. **Run the Streamlit app**
     ```bash
     streamlit run app2.py
     ```
 
 #### Flask App
 
-1. **Clone the repository**:
+1. **Clone the repository**
     ```bash
     git clone https://github.com/nyarotoyi/Course-recommendation-system.git
     cd Course-recommendation-system
     ```
 
-2. **Install dependencies**:
+2. **Install dependencies**
     ```bash
     pip install flask scikit-learn numpy
     ```
 
-3. **Run the Flask app**:
+3. **Run the Flask app**
     ```bash
     python app.py
     ```
