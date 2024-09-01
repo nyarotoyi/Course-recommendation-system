@@ -94,7 +94,7 @@ st.write("Fill the form below to get your course recommendations:")
 
 # Input Form
 with st.form(key='recommendation_form'):
-    gender = st.selectbox("Gender", ["Male", "Female"])
+    gender = st.selectbox("Gender", ["Select Gender", "Male", "Female"])
     extracurricular_activities = st.checkbox("Involved in Extracurricular Activities")
     riasec = st.slider("RIASEC Score", min_value=1, max_value=40, value=20)
     math_score = st.number_input("Math Score", min_value=0, max_value=100)
