@@ -61,3 +61,10 @@ This dataset contains information about students enrolled in an academy, includi
 
  ## Acknowledgment
 Building a working concept will require more accurate data and a reliable method for assessing RIASEC profiles. This project serves as a proof of concept, and future developments will focus on improving data accuracy and enhancing the assessment process for better recommendations.
+
+## Contact Information
+
+For inquiries, collaborations, or more information about the Course Recommendation System, please feel free to reach out:
+
+Email: zianaodero@gmail.com
+LinkedIn: [Marice Ziana](https://www.linkedin.com/in/marice-ziana-a51442146/)
