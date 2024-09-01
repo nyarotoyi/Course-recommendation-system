@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import pickle
 
-# Load the model and scaler 
+# Load the model and scaler
 scaler = pickle.load(open("Models/scaler.pkl", "rb"))
 model = pickle.load(open("Models/model.pkl", "rb"))
 
@@ -104,27 +104,36 @@ with st.form(key='recommendation_form'):
     biology_score = st.number_input("Biology Score", min_value=0, max_value=100)
     english_score = st.number_input("English Score", min_value=0, max_value=100)
     geography_score = st.number_input("Geography Score", min_value=0, max_value=100)
-    total_score = st.number_input("Total Score", min_value=0.0, format="%.2f")
-    average_score = st.number_input("Average Score", min_value=0.0, format="%.2f")
+    
+    # Calculate total and average scores
+    total_score = (math_score + history_score + physics_score +
+                   chemistry_score + biology_score + english_score +
+                   geography_score)
+    average_score = total_score / 7  # Total number of subjects
     
     submit_button = st.form_submit_button("Get Recommendations")
 
     if submit_button:
-        recommendations = Recommendations(
-            gender,
-            extracurricular_activities,
-            riasec,
-            math_score,
-            history_score,
-            physics_score,
-            chemistry_score,
-            biology_score,
-            english_score,
-            geography_score,
-            total_score,
-            average_score,
-        )
+        if gender == "Select Gender":
+            st.error("Please select your gender.")
+        elif total_score <= 0 or average_score <= 0:
+            st.error("Total Score and Average Score must be greater than 0.")
+        else:
+            recommendations = Recommendations(
+                gender,
+                extracurricular_activities,
+                riasec,
+                math_score,
+                history_score,
+                physics_score,
+                chemistry_score,
+                biology_score,
+                english_score,
+                geography_score,
+                total_score,
+                average_score,
+            )
 
-        st.write("### Recommended Courses and Probabilities")
-        for idx, (course, probability) in enumerate(recommendations, 1):
-            st.write(f"{idx}. **{course}**: {probability}")
+            st.write("### Recommended Courses and Probabilities")
+            for idx, (course, probability) in enumerate(recommendations, 1):
+                st.write(f"{idx}. **{course}**: {probability}")
