@@ -97,7 +97,7 @@ if st.button("Get Course Recommendation"):
     probabilities = model.predict_proba(scaled_features)
     top_classes_idx = np.argsort(-probabilities[0])[:3]
     top_classes_names_probs = [
-        (class_names[idx], float(probabilities[0][idx]))for idx in top_classes_idx
+        (class_names[idx], f"Probability: {float(probabilities[0][idx]):.2f}") for idx in top_classes_idx
     ]
 
     st.write(f"Recommended Course: {top_classes_names_probs}")
