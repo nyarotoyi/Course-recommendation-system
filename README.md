@@ -14,7 +14,55 @@ The system leverages a Random Forest Classifier to analyze students' academic sc
   
 ## Future Enhancements
 Building a robust and accurate system will require additional data and testing. Expanding the dataset and integrating comprehensive RIASEC assessments will enhance the system's effectiveness and reliability.
+## Try the App
 
+### Streamlit Cloud
+
+Click the button below to access the Course Recommendation System on Streamlit Cloud:
+
+<a href="https://courserecommendationsytem.streamlit.app/" target="_blank">
+  <img src="https://img.shields.io/badge/Try%20the%20App%20on%20Streamlit%20Cloud-blue?style=for-the-badge&logo=streamlit" alt="Try the App on Streamlit Cloud" />
+</a>
+
+### Deploy Locally
+
+You can also deploy the app locally. Choose between the Streamlit app or the Flask app:
+
+#### Streamlit App
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/nyarotoyi/Course-recommendation-system.git
+    cd Course-recommendation-system
+    ```
+
+2. **Install dependencies**:
+    ```bash
+    pip install streamlit scikit-learn numpy
+    ```
+
+3. **Run the Streamlit app**:
+    ```bash
+    streamlit run app2.py
+    ```
+
+#### Flask App
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/nyarotoyi/Course-recommendation-system.git
+    cd Course-recommendation-system
+    ```
+
+2. **Install dependencies**:
+    ```bash
+    pip install flask scikit-learn numpy
+    ```
+
+3. **Run the Flask app**:
+    ```bash
+    python app.py
+    ```
 ## What is RIASEC?
 
 RIASEC, also known as the Holland Code, is a theory of personality and career development. It classifies people into six personality types and matches them with compatible careers and educational paths. The six types are:
@@ -64,7 +112,7 @@ Building a working concept will require more accurate data and a reliable method
 
 ## Contact Information
 
-For inquiries, collaborations, or more information about the Course Recommendation System, please feel free to reach out:
+For inquiries, collaborations, or more information about the Course Recommendation System, please feel free to reach out
 
-Email: zianaodero@gmail.com
+Email: [zianaodero@gmail.com](mailto:zianaodero@gmail.com).
 LinkedIn: [Marice Ziana](https://www.linkedin.com/in/marice-ziana-a51442146/)
