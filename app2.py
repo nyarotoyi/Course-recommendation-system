@@ -110,25 +110,20 @@ with st.form(key='recommendation_form'):
     submit_button = st.form_submit_button("Get Recommendations")
 
     if submit_button:
-        if gender == "Select Gender":
-            st.error("Please select your gender.")
-        elif total_score <= 0 or average_score <= 0:
-            st.error("Total Score and Average Score must be greater than 0.")
-        else:
-            recommendations = Recommendations(
-                gender,
-                extracurricular_activities,
-                riasec,
-                math_score,
-                history_score,
-                physics_score,
-                chemistry_score,
-                biology_score,
-                english_score,
-                geography_score,
-                total_score,
-                average_score,
-            )
+        recommendations = Recommendations(
+            gender,
+            extracurricular_activities,
+            riasec,
+            math_score,
+            history_score,
+            physics_score,
+            chemistry_score,
+            biology_score,
+            english_score,
+            geography_score,
+            total_score,
+            average_score,
+        )
 
         st.write("### Recommended Courses and Probabilities")
         for idx, (course, probability) in enumerate(recommendations, 1):
