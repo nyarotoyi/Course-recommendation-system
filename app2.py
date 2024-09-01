@@ -3,15 +3,17 @@ import pickle
 import numpy as np
 
 # Load the scaler and model
+caler = pickle.load(open("Models/scaler.pkl", 'rb'))
+model = pickle.load(open("Models/model.pkl", 'rb'))
 scaler = pickle.load(
     open(
-        r"C:\Users\Zeetracker\Desktop\BBIT 4.2\Systems Project Implementation HBT 2403\course-recommender\Models\scaler.pkl",
+        "Models/scaler.pkl",
         "rb",
     )
 )
 model = pickle.load(
     open(
-        r"C:\Users\Zeetracker\Desktop\BBIT 4.2\Systems Project Implementation HBT 2403\course-recommender\Models\model.pkl",
+        "Models/model.pkl",
         "rb",
     )
 )
