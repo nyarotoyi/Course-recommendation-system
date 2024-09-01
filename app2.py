@@ -39,7 +39,19 @@ class_names = [
     "Bachelor of Technology and Entrepreneurship Management",
 ]
 
+# Streamlit App
 st.title("Course Recommendation System")
+
+st.write("""
+    Welcome to the Course Recommendation System.
+    This system is a test project designed to explore the potential of recommending university courses based on student profiles. 
+    The dataset used was sourced from Kaggle and tailored to fit the objectives of this proof of concept.
+
+    Currently, we have focused on 14 courses offered by JKUAT COHRED, aiming to demonstrate how academic performance and RIASEC profiles 
+    can be used to suggest the most suitable courses for students.
+""")
+
+st.write("Fill the form below to get your course recommendations:")
 
 # Input fields
 gender = st.selectbox("Gender", ["Male", "Female"])
@@ -100,4 +112,6 @@ if st.button("Get Course Recommendation"):
         (class_names[idx], f"Probability: {float(probabilities[0][idx]):.2f}") for idx in top_classes_idx
     ]
 
-    st.write(f"Recommended Course: {top_classes_names_probs}")
+        st.write("### Recommended Courses and Probabilities")
+        for idx, (course, probability) in enumerate(recommendations, 1):
+            st.write(f"{idx}. **{course}**: {probability}")
